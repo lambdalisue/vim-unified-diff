@@ -1,0 +1,33 @@
+Describe vim-unified-diff
+  Context unified_diff#parse({unified})
+    It should return a normal diff
+      let unified = [
+            \ "--- sample.txt.orig	2015-03-26 02:01:53.936771801 +0900",
+            \ "+++ sample.txt	2015-03-26 02:02:07.064593488 +0900",
+            \ "@@ -8,2 +8,2 @@",
+            \ "-やゆよ",
+            \ "-らりるれろ",
+            \ "+やゆよら",
+            \ "+りるれろ",
+            \ "@@ -11 +10,0 @@",
+            \ "-がぎぐげご",
+            \ "@@ -25,0 +25 @@",
+            \ "+ァィゥェォ",
+            \]
+      let result = unified_diff#parse(unified)
+      let expect = [
+            \ "8,9c8,9",
+            \ "< やゆよ",
+            \ "< らりるれろ",
+            \ "---",
+            \ "> やゆよら",
+            \ "> りるれろ",
+            \ "11d10",
+            \ "< がぎぐげご",
+            \ "25a25",
+            \ "> ァィゥェォ",
+            \]
+      Assert Equals(result, expect)
+    End
+  End
+End

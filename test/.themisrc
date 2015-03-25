@@ -1,0 +1,7 @@
+let s:assert = themis#helper('assert')
+" currently <sfile> in vimspec does not work thus I have to define the
+" variable as a global variable.
+let g:vital_vcs_git_repository_root = expand('<sfile>:p:h:h')
+
+call themis#option('recursive', 1)
+call themis#helper('command').with(s:assert)
