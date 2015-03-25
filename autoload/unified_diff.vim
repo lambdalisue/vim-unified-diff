@@ -78,7 +78,7 @@ function! unified_diff#diff(fname_in, fname_new) abort " {{{
 endfunction " }}}
 function! unified_diff#diffexpr() abort " {{{
   let diff = unified_diff#diff(v:fname_in, v:fname_new)
-  call writefile(v:fname_out, diff)
+  call writefile(diff, v:fname_out)
 endfunction " }}}
 
 let &cpo = s:save_cpo

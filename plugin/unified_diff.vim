@@ -14,7 +14,10 @@ set cpo&vim
 let s:settings = {
       \ 'executable': 'git',
       \ 'arguments': [
-      \   'diff', '--no-index', '--no-color', '--no-ext-diff', '--unified=0',
+      \   'diff',
+      \   '--unified=0',
+      \   '--no-index', '--no-color', '--no-ext-diff',
+      \   '--histogram',
       \ ],
       \ 'iwhite_arguments': [
       \   '--ignore--all-space',
