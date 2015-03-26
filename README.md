@@ -10,13 +10,15 @@ A library for using diff programs which only support *unified diff* (i.e. `git d
 
 INTRODUCTIONS
 ==============================================================================
+This plugins was built mainly for using `git diff --histogram` in `vimdiff`. The following screenshot is a diff mode with vim builtin `diffexpr`
+
 ![Builtin diff](./doc/builtin_diff.png)
 
-The diff shown above will be
+It will be turn into
 
 ![Histogram diff](./doc/histogram_diff.png)
 
-via `git diff`.
+via `git diff --histogram` and *vim-unified-diff*
 
 Inspired by http://qiita.com/takaakikasai/items/3d4f8a4867364a46dfa3 and written in pure vimscript.
 
