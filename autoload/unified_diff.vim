@@ -73,7 +73,7 @@ function! unified_diff#diff(fname_in, fname_new) abort " {{{
     call extend(args, g:unified_diff#iwhite_arguments)
   endif
   call extend(args, [a:fname_in, a:fname_new])
-  let unified = s:P.system(join(args))
+  let unified = s:P.system(args)
   return s:parse_unified(unified)
 endfunction " }}}
 function! unified_diff#diffexpr() abort " {{{
