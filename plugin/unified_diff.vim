@@ -20,7 +20,7 @@ let s:settings = {
       \   '--histogram',
       \ ],
       \ 'iwhite_arguments': [
-      \   '--ignore--all-space',
+      \   '--ignore-all-space',
       \ ],
       \}
 function! s:init() " {{{
