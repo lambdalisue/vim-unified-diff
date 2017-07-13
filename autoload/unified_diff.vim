@@ -4,7 +4,10 @@ let s:t_string = type('')
 
 
 function! s:parse_unified_region(line) abort
-  let m = matchlist(a:line, '\v^\@\@ \-(\d+)%(,(\d+))? \+(\d+)%(,(\d+))? \@\@')
+  let m = matchlist(
+        \ a:line,
+        \ '^@@ -\(\d\+\)\%(,\(\d\+\)\)\? +\(\d\+\)\%(,\(\d\+\)\)\? @@'
+        \)
   if empty(m)
     throw printf(
           \ 'vim-unified-diff: invalid format "%s" was specified',
@@ -35,17 +38,17 @@ endfunction
 function! s:parse_unified(unified) abort
   let _normal = []
   for line in a:unified
-    if line =~# '\v^%(\+\+\+|\-\-\-)'
+    if line =~# '^\%(+++\|---\)'
       continue
-    elseif line =~# '\v^\@\@ \-%(\d+)%(,\d+)? \+%(\d+)%(,\d+)? \@\@'
+    elseif line =~# '^@@ -\d\+\%(,\d\+\)\? +\d\+\%(,\d\+\)\? @@'
       call add(_normal, s:parse_unified_region(line))
-    elseif line =~# '\v^\-'
-      call add(_normal, substitute(line, '\v^\-', '< ', ''))
-    elseif line =~# '\v^\+'
-      if _normal[-1] =~# '\v^\< '
+    elseif line =~# '^-'
+      call add(_normal, substitute(line, '^-', '< ', ''))
+    elseif line =~# '^+'
+      if _normal[-1] =~# '^< '
         call add(_normal, '---')
       endif
-      call add(_normal, substitute(line, '\v^\+', '> ', ''))
+      call add(_normal, substitute(line, '^+', '> ', ''))
     endif
   endfor
   return _normal
