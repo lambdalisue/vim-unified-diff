@@ -15,11 +15,11 @@ INTRODUCTIONS
 ==============================================================================
 This plugins was built mainly for using `git diff --histogram` in `vimdiff`. The following screenshot is a diff mode with vim builtin `diffexpr`
 
-![Builtin diff](./doc/builtin_diff.png)
+![Builtin diff](https://raw.githubusercontent.com/lambdalisue/vim-unified-diff/misc/img/builtin_diff.png)
 
 It will be turn into
 
-![Histogram diff](./doc/histogram_diff.png)
+![Histogram diff](https://raw.githubusercontent.com/lambdalisue/vim-unified-diff/misc/img/histogram_diff.png)
 
 via `git diff --histogram` and *vim-unified-diff*
 
