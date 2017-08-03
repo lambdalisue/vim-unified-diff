@@ -1,0 +1,39 @@
+*unified_diff.txt*			Allow unified-diff in vimdiff
+
+Version: 0.2.1
+Author:  Alisue <lambdalisue@hashnote.net>
+Support: Vim 8.0.0027 and above
+Support: Neovim 0.1.7 and above
+License: MIT License (See LICENSE)
+
+
+=============================================================================
+CONTENTS					*unified_diff-contents*
+
+INTRODUCTION			|unified_diff-introduction|
+USAGE				|unified_diff-usage|
+
+
+=============================================================================
+INTRODUCTION					*unified_diff-introduction*
+
+*unified_diff* is a plugin to use an external diff program which only support
+unified-diff in |vimdiff|.
+
+In default, it uses "git diff --histogram" so that installing this plugin
+automatically improve your |vimdiff| quality.
+
+Latest version:~
+https://github.com/lambdalisue/vim-unified-diff
+
+It was inspired by http://qiita.com/takaakikasai/items/3d4f8a4867364a46dfa3 
+and written in pure vimscript.
+
+=============================================================================
+USAGE						*unified_diff-usage*
+
+Once users install this plugin, it automatically configures 'diffexpr'.
+To disable it, assign 0 to *g:unified_diff_enabled* variable.
+
+=============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl

@@ -1,22 +1,8 @@
-let s:settings = {
-      \ 'executable': 'git',
-      \ 'arguments': [
-      \   'diff',
-      \   '--unified=0',
-      \   '--no-index', '--no-color', '--no-ext-diff',
-      \   '--histogram',
-      \ ],
-      \ 'iwhite_arguments': [
-      \   '--ignore-all-space',
-      \ ],
-      \}
+if exists('g:unified_diff_loaded')
+  finish
+endif
+let g:unified_diff_loaded = 1
 
-function! s:init() " {{{
-  for [key, value] in items(s:settings)
-    if !exists('g:unified_diff#' . key)
-      let g:unified_diff#{key} = value
-    endif
-    unlet value
-  endfor
-endfunction
-call s:init()
+if get(g:, 'unified_diff_enabled', 1)
+  set diffexpr=unified_diff#diffexpr()
+endif
