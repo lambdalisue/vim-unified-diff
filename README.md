@@ -1,5 +1,4 @@
-vim-unified-diff
-==============================================================================
+# vim-unified-diff
 [![Travis CI](https://img.shields.io/travis/lambdalisue/vim-unified-diff/master.svg?style=flat-square&label=Travis%20CI)](https://travis-ci.org/lambdalisue/vim-unified-diff)
 ![Version 0.2.1](https://img.shields.io/badge/version-0.2.1-yellow.svg?style=flat-square)
 ![Support Vim 8.0.0027 or above](https://img.shields.io/badge/support-Vim%208.0.0027%20or%20above-yellowgreen.svg?style=flat-square)
@@ -26,16 +25,14 @@ by this plugin.
 Inspired by http://qiita.com/takaakikasai/items/3d4f8a4867364a46dfa3 and written in pure vimscript.
 
 
-INSTALL
-==============================================================================
+## INSTALL
 
 ```vim
 NeoBundle 'lambdalisue/vim-unified-diff'
 Plug 'lambdalisue/vim-unified-diff'
 ```
 
-USAGE
-==============================================================================
+## USAGE
 
 Once users install this plugin, it automatically configures `diffexpr`.
 To disable it, assign 0 to `g:unified_diff_enabled` variable.
