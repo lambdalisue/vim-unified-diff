@@ -1,3 +1,20 @@
+## Deprecated
+
+[Vim 8.1.0360](https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf) introduce `algorithm:{text}` to `diffopt` and natively supports the following algorithms
+
+- myers (default)
+- minimal
+- patience
+- histogram
+
+So that if you use this plugin to use one of the above algorithm, the plugin is no longer required and use setting like below:
+
+```vim
+set diffopt& diffopt+=algorithm:histogram,indent-heuristic
+```
+
+See `:help diffopt` for detail.
+
 # vim-unified-diff
 [![Travis CI](https://img.shields.io/travis/lambdalisue/vim-unified-diff/master.svg?style=flat-square&label=Travis%20CI)](https://travis-ci.org/lambdalisue/vim-unified-diff)
 ![Version 0.2.1](https://img.shields.io/badge/version-0.2.1-yellow.svg?style=flat-square)
@@ -23,7 +40,6 @@ It will be turn into
 by this plugin.
 
 Inspired by http://qiita.com/takaakikasai/items/3d4f8a4867364a46dfa3 and written in pure vimscript.
-
 
 ## INSTALL
 
